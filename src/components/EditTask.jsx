@@ -19,7 +19,7 @@ const EditTask = () => {
     if(existingTask){
       setTask(existingTask);
     }
-  },[])
+  },[id,state.tasks])
 
   const handleEdit=(updatedTask)=>{
     console.log("updatedTask is",updatedTask)

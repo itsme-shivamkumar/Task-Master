@@ -1,25 +1,7 @@
-import React,{createContext,useContext,useReducer} from 'react'
+import React,{createContext,useContext,useEffect,useReducer} from 'react'
+import {getTasksFromLocalStorage,saveTasksToLocalStorage} from '../components/localStorageUtils'
 
 const TaskContext=createContext();
-
-const initialState={
-    tasks:[
-        {
-            id:1,
-            name:"Task 1",
-            description:"Test Description 1",
-            priority:"high",
-            completed:false
-        },
-        {
-            id:2,
-            name:"Task 2",
-            description:"Test Description 2",
-            priority:"low",
-            completed:true
-        }
-    ],
-}
 
 const taskReducer=(state,action)=>{
     switch(action.type){
@@ -46,7 +28,16 @@ const taskReducer=(state,action)=>{
 }
 
 const TaskProvider = ({children}) => {
+    const initialState={
+        tasks:getTasksFromLocalStorage()
+    }
+
     const [state,dispatch]=useReducer(taskReducer,initialState);
+
+    useEffect(()=>{
+        saveTasksToLocalStorage(state.tasks);
+    },[state.tasks])
+
   return (
     <TaskContext.Provider value={{state,dispatch}}>
         {children}
