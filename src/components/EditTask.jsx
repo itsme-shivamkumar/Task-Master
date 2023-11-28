@@ -22,7 +22,8 @@ const EditTask = () => {
   },[])
 
   const handleEdit=(updatedTask)=>{
-    dispatch({type:'UPDATE_TASK', payload:{...updatedTask, id:task.id}})
+    console.log("updatedTask is",updatedTask)
+    dispatch({type:'UPDATE_TASK', payload:{...updatedTask, id:parseInt(id)}})
     navigator('/');
   }
   const handleCancel=()=>{

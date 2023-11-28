@@ -32,7 +32,7 @@ const taskReducer=(state,action)=>{
             return {
                 ...state,
                 tasks: state.tasks.map((task)=>{
-                    return task.id===action.payload?{...task, ...action.payload.updatedTask}:task
+                    return task.id===action.payload.id?{...task, ...action.payload}:task
                 })
             };
         case 'TOGGLE_COMPLETE_TASK':

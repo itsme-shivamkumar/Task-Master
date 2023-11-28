@@ -14,6 +14,7 @@ const TaskForm = ({onSubmit, onCancel, initialValue}) => {
 
     const handleSubmit=(e)=>{
         e.preventDefault();
+        console.log("task sending is ",task);
         onSubmit(task);
     }
   return (
