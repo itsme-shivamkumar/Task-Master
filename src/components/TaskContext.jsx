@@ -3,7 +3,22 @@ import React,{createContext,useContext,useReducer} from 'react'
 const TaskContext=createContext();
 
 const initialState={
-    tasks:[],
+    tasks:[
+        {
+            id:1,
+            name:"Task 1",
+            description:"Test Description 1",
+            priority:"high",
+            completed:false
+        },
+        {
+            id:2,
+            name:"Task 2",
+            description:"Test Description 2",
+            priority:"low",
+            completed:true
+        }
+    ],
 }
 
 const taskReducer=(state,action)=>{
@@ -13,12 +28,18 @@ const taskReducer=(state,action)=>{
         case 'DELETE_TASK':
             return {...state,tasks: state.tasks.filter((task)=>task.id!==action.payload)};
         case 'UPDATE_TASK':
+            console.log("state and action is",state.tasks,action.payload)
             return {
                 ...state,
                 tasks: state.tasks.map((task)=>{
-                    return task.id===action.payload.id?{...task, ...action.payload.updatedTask}:task
+                    return task.id===action.payload?{...task, ...action.payload.updatedTask}:task
                 })
             };
+        case 'TOGGLE_COMPLETE_TASK':
+            return {
+                ...state,
+                tasks: state.tasks.map((task)=>task.id===action.payload?{...task, completed:!task.completed}:task)
+            }
         default:
             return state;
     }

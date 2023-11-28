@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTaskContext } from './TaskContext'
 import TaskListItem from './TaskListItem';
+import { Link } from 'react-router-dom';
 
 const TaskList = () => {
     
@@ -10,8 +11,8 @@ const TaskList = () => {
         dispatch({type:'DELETE_TASK', payload:id});
     }
 
-    const handleToggleComplete=()=>{
-        
+    const handleToggleComplete=(id)=>{
+        dispatch({type:'TOGGLE_COMPLETE_TASK', payload: id})
     }
 
     return (
@@ -24,6 +25,9 @@ const TaskList = () => {
                 onToggleComplete={()=>handleToggleComplete(task.id)}
             />)
         })}
+        <Link to={'/add'} >
+            <button>+Add Task</button>
+        </Link>
     </>
     )
 }
