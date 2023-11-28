@@ -7,7 +7,7 @@ export const getTasksFromLocalStorage=()=>{
     return [
         {
             id:1,
-            name:"Task One",
+            name:"Task 1",
             description:"Test Description 1",
             priority:"high",
             completed:false
