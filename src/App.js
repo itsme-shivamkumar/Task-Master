@@ -8,13 +8,13 @@ import { TaskProvider } from "./components/TaskContext";
 function App() {
   return (
     <TaskProvider>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<TaskList/>} />
-        <Route path="/add" element={<AddTask/>}/>
-        <Route path="/edit/:id" element={<EditTask/>}/>
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<TaskList/>} />
+          <Route path="/add" element={<AddTask/>}/>
+          <Route path="/edit/:id" element={<EditTask/>}/>
+        </Routes>
+      </BrowserRouter>
     </TaskProvider>
   );
 }
