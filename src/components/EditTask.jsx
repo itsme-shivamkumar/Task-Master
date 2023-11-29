@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import TaskForm from './TaskForm'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useTaskContext } from './TaskContext';
+import TaskModal from './TaskModal';
 
 const EditTask = () => {
   const navigator=useNavigate();
@@ -32,7 +33,7 @@ const EditTask = () => {
   return (
     <>
       <h1>Edit Task</h1>
-      <TaskForm onSubmit={handleEdit} onCancel={handleCancel} initialValue={task} />
+      <TaskModal onSubmit={handleEdit} onCancel={handleCancel} initialValue={task} />
     </>
   )
 }

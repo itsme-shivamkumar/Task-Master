@@ -1,5 +1,6 @@
 import React from 'react'
 import TaskForm from './TaskForm'
+import TaskModal from './TaskModal'
 import { useTaskContext } from './TaskContext'
 import { useNavigate } from 'react-router-dom'
 const AddTask = () => {
@@ -14,8 +15,7 @@ const AddTask = () => {
   }
   return (
     <>
-      <h1>Add Task</h1>
-      <TaskForm onSubmit={handleAddTask} onCancel={handleCancel} initialValue={{name:'Enter Task Name', description:'Enter Description of Task', priority:'low', completed:false}} />
+      <TaskModal onSubmit={handleAddTask} onCancel={handleCancel} initialValue={{name:'Enter Task Name', description:'Enter Description of Task', priority:'low', completed:false}} />
     </>
     
   )

@@ -1,0 +1,27 @@
+.list{
+    display:flex;
+    flex-direction: column;
+    box-sizing:'border-box';
+    width:'98vw';
+    justify-content: center;
+    align-items: center;
+    
+}
+.addBtn{
+    position: fixed;
+    bottom:100px;
+    right: 100px;
+}
+a{
+    text-decoration: none !important;
+}
+.addBtn button{
+    font-size: 22px !important;
+    font-weight: 800;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+button:hover{
+    cursor: pointer;
+}

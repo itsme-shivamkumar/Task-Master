@@ -3,6 +3,10 @@ import { useTaskContext } from './TaskContext'
 import TaskListItem from './TaskListItem';
 import { Link, useNavigate } from 'react-router-dom';
 import { clearTasksFromLocalStorage } from './localStorageUtils';
+import './TaskList.css'
+import TaskCard from './TaskCard';
+import Badge from 'react-bootstrap/Badge';
+import { Button } from 'react-bootstrap';
 
 const TaskList = () => {
 
@@ -24,21 +28,33 @@ const TaskList = () => {
     }
 
     return (
-    <>
+        <div>
+    <span className='list' >
         {state.tasks.map((task)=>{
-            return (<TaskListItem
+            return (<>
+            {/* <TaskListItem
                 key={task.id}
                 task={task}
                 onDelete={()=>handleDelete(task.id)}
                 onToggleComplete={()=>handleToggleComplete(task.id)}
-            />)
+            /> */}
+            <TaskCard
+                key={task.id}
+                task={task}
+                onDelete={()=>handleDelete(task.id)}
+                onToggleComplete={()=>handleToggleComplete(task.id)}
+            />
+            </>)
         })}
-        <Link to={'/add'} >
-            <button>+Add Task</button>
-        </Link>
 
-        <button onClick={handleClearLocalStorage} >Clear Local Storage</button>
-    </>
+    </span>
+    <span className={'addBtn'} >
+        <Link to={'/add'} >
+            <button type="button" class="btn btn-success rounded-6 btn-lg">Add Task</button>
+        </Link>
+    </span>
+        {/* <span onClick={handleClearLocalStorage} >Clear Local Storage</span> */}
+    </div>
     )
 }
 

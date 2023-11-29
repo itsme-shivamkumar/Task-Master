@@ -4,9 +4,13 @@ import AddTask from "./components/AddTask";
 import EditTask from "./components/EditTask";
 import TaskList from "./components/TaskList";
 import { TaskProvider } from "./components/TaskContext";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
+
+import './App.css'
 function App() {
   return (
+    <span className="app" >
     <TaskProvider>
       <BrowserRouter>
         <Routes>
@@ -16,6 +20,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </TaskProvider>
+    </span>
   );
 }
 
