@@ -1,10 +1,10 @@
 .list{
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
     box-sizing:'border-box';
-    width:'98vw';
-    justify-content: center;
-    align-items: center;
+    width:'100%';
+    justify-content: space-around;
+    align-items: flex-start;
     
 }
 .addBtn{
@@ -24,4 +24,19 @@ a{
 }
 button:hover{
     cursor: pointer;
+}
+
+.startingCol{
+    margin-top: 150px;
+}
+
+@media screen and (max-width:1000px) {
+    .list{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .startingCol{
+        margin-top: 120px;
+    }
 }

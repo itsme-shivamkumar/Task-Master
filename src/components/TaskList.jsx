@@ -7,6 +7,8 @@ import './TaskList.css'
 import TaskCard from './TaskCard';
 import Badge from 'react-bootstrap/Badge';
 import { Button } from 'react-bootstrap';
+import Header from './Header';
+import AddButton from './AddButton';
 
 const TaskList = () => {
 
@@ -28,9 +30,12 @@ const TaskList = () => {
     }
 
     return (
-        <div>
+        <>
+        <div >
+        <Header/>
     <span className='list' >
-        {state.tasks.map((task)=>{
+        <span className="startingCol" >
+        {state.tasks.filter((task)=>task.priority==="high").map((task)=>{
             return (<>
             {/* <TaskListItem
                 key={task.id}
@@ -46,15 +51,48 @@ const TaskList = () => {
             />
             </>)
         })}
+        </span>
+        <span className="startingCol">
+        {state.tasks.filter((task)=>task.priority==="medium").map((task)=>{
+            return (<>
+            {/* <TaskListItem
+                key={task.id}
+                task={task}
+                onDelete={()=>handleDelete(task.id)}
+                onToggleComplete={()=>handleToggleComplete(task.id)}
+            /> */}
+            <TaskCard
+                key={task.id}
+                task={task}
+                onDelete={()=>handleDelete(task.id)}
+                onToggleComplete={()=>handleToggleComplete(task.id)}
+            />
+            </>)
+        })}
+        </span>
+        <span className="startingCol">
+        {state.tasks.filter((task)=>task.priority==="low").map((task)=>{
+            return (<>
+            {/* <TaskListItem
+                key={task.id}
+                task={task}
+                onDelete={()=>handleDelete(task.id)}
+                onToggleComplete={()=>handleToggleComplete(task.id)}
+            /> */}
+            <TaskCard
+                key={task.id}
+                task={task}
+                onDelete={()=>handleDelete(task.id)}
+                onToggleComplete={()=>handleToggleComplete(task.id)}
+            />
+            </>)
+        })}
+        </span>
 
     </span>
-    <span className={'addBtn'} >
-        <Link to={'/add'} >
-            <button type="button" class="btn btn-success rounded-6 btn-lg">Add Task</button>
-        </Link>
-    </span>
         {/* <span onClick={handleClearLocalStorage} >Clear Local Storage</span> */}
-    </div>
+        </div>
+    </>
     )
 }
 
