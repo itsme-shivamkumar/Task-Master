@@ -66,11 +66,14 @@ The application will be accessible at [http://localhost:3000](http://localhost:3
 
 ## Screenshots
 
-![Screenshot 1](./screenshots/screenshot1.png)
-*Caption: Add your caption here.*
+![Screenshot 1](./screenshots/main_page.png)
+*Caption: Page Desktop Preview.*
 
-![Screenshot 2](./screenshots/screenshot2.png)
-*Caption: Add your caption here.*
+![Screenshot 2](./screenshots/add_task.png)
+*Caption: Adding task preview.*
+
+![Screenshot 2](./screenshots/edit_task.png)
+*Caption: Editing task preview.*
 
 <!-- ## Contributing
 
