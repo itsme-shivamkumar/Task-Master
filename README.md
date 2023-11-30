@@ -15,21 +15,32 @@ This application provides a user-friendly interface for managing tasks. Users ca
 - Delete tasks.
 - Persistent data storage using the browser's local storage.
 - Responsive design for a user-friendly interface.
+- Sorting tasks based on priority or completion status (optional).
+- Pagination for the task list (optional).
+- Adding due dates to tasks (optional).
 
 ## Project Structure
 
 - **src/**
-  - **components/** - React components for TaskList, TaskListItem, AddTask, EditTask, and TaskForm.
-  - **context/** - React context for state management.
-  - **styles/** - CSS stylesheets for styling components.
-  - **App.js** - Main application component.
-  - **index.js** - Entry point for the React application.
+  - **assets/** - Icon for the application.
+  - **components/**
+    - **AddButton.jsx** - Component for rendering the "Add Task" button.
+    - **AddTask.jsx** - Component for adding new tasks.
+    - **EditTask.jsx** - Component for editing existing tasks.
+    - **Header.jsx** - Component for the application header.
+    - **localStorageUtils.js** - Utility functions for managing local storage.
+    - **TaskCard.jsx** - Component for rendering individual task cards.
+    - **TaskContext.jsx** - Context for managing state related to tasks.
+    - **TaskForm.jsx** - Component for rendering the task form.
+    - **TaskList.jsx** - Component for displaying the list of tasks.
+    - **TaskListItem.jsx** - Component for rendering individual task items.
+    - **TaskModal.jsx** - Component for rendering the modal for adding/editing tasks.
 
 ## Setup and Installation
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/your-username/task-management-app.git
+    git clone https://github.com/itsme-shivamkumar/Task-Master.git
     cd task-management-app
     ```
 
@@ -53,12 +64,6 @@ The application will be accessible at [http://localhost:3000](http://localhost:3
 4. Use the checkbox to mark tasks as completed or incomplete.
 5. Click on the "Delete" button to remove a task.
 
-## Additional Features
-
-- Sorting tasks based on priority or completion status (optional).
-- Pagination for the task list (optional).
-- Adding due dates to tasks (optional).
-
 ## Screenshots
 
 ![Screenshot 1](./screenshots/screenshot1.png)
@@ -67,9 +72,9 @@ The application will be accessible at [http://localhost:3000](http://localhost:3
 ![Screenshot 2](./screenshots/screenshot2.png)
 *Caption: Add your caption here.*
 
-## Contributing
+<!-- ## Contributing
 
-Contributions are welcome! Please follow the [contribution guidelines](CONTRIBUTING.md).
+Contributions are welcome! Please follow the [contribution guidelines](CONTRIBUTING.md). -->
 
 ## License
 
