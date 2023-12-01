@@ -38,7 +38,7 @@ function TaskModal({onSubmit, onCancel, initialValue}) {
     <>
       <Modal show={show} onHide={handleClose} className='bg-dark text-light outline-dark' data-bs-theme="dark" >
         <Modal.Header closeButton className='bg-dark text-light' >
-          <Modal.Title >Add task</Modal.Title>
+          <Modal.Title >{(task?.id)?'Edit task':'Add task'}</Modal.Title>
         </Modal.Header>
         <Modal.Body className='bg-dark text-light' >
           <Form>
